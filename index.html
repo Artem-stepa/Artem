@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+
     <title>Document</title>
 </head>
 <body>
   
     <header>
         <h1> Графік світла в Одесі(Одеській області)</h1>
-            </header>
+    </header>
             <main>
-        <select> Обрати день
+                <div class="select-container">
+        <select class="select-day"> Обрати день
             <option>Понеділок</option>
             <option>Вівторок</option>
             <option>Середа</option>
@@ -21,7 +24,7 @@
             <option>Неділя</option>
        
         </select>
-        <select> 
+        <select class="select-hour"> 
             <option>0:00</option>
             <option>1:00</option>
             <option>2:00</option>
@@ -48,15 +51,17 @@
             <option>23:00</option>
                
              </select>
-        <select>
+        <select  class="select-electricity">
             <option>Є</option>
             <option>Нема</option>
             <option>Може бути</option>
             <option>Невідомо</option>
         </select>
         <button> Зберегти </button>
+        </div>
+
         <table>
-            <tr>
+            <tr class="hour-row"> 
                 <td> Часові проміжкі</td>
                  <td>00-01</td>
                  <td>01-02</td>
@@ -84,7 +89,7 @@
                  <td>23-24</td>
                  <td>24-00</td>
                 </tr>
-                <tr>
+                <tr class="day-row">
                     <td>Понеділок</td>
                     <td></td>
                     <td></td>
@@ -111,7 +116,7 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <td>Вівторок</td>
+                <td class="day-row">Вівторок</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -137,34 +142,93 @@
                 <td></td>
                 <td></td>
             </tr>
-            <td>Середа</td>
+    <tr  class="day-row">
+    <td>Середа</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+</tr>       
+    <tr  class="day-row">      
+    <td>Четверг</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr  class="day-row">      
+        <td>П'ятниця</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr  class="day-row">      
+        <td>Субота</td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>     
-        <tr>      
-        <td>Четверг</td>
             <td></td>
             <td></td>
             <td></td>
@@ -189,18 +253,35 @@
             <td></td>
             <td></td>
         </tr>
-        
+        <tr  class="day-row">      
+            <td>Неділя</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+</table>
 
-              
-     
-                <footer>
-                    <h2>Наші соцсеті:</h2>
-                    <p>Тікток: mi_negri554<img class="tiktok"src="https://envybox.io/blog/wp-content/uploads/2020/10/1-6.jpg"></p>
-
-                <p>Instagram: mi_negri898<img class="instagram"src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/640px-Instagram_logo_2022.svg.png"></p>
-                
-
-                </footer>
-              </table>
 </body>
 </html>
