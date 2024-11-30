@@ -1,0 +1,32 @@
+h1{
+    background-color: yellow;
+    text-align: center;
+
+}
+select{
+    background-image:linear-gradient(yellow,black);
+    color:red;
+}
+h2{
+    color:yellow;
+    text-align: center;
+}
+.tiktok{
+    border-radius: 30px;
+
+}
+.instagram{
+    border-radius: 30px;
+}
+p{
+    background-image:linear-gradient(yellow,black); 
+}
+table{
+
+}
+tr{
+
+}
+td{
+
+}
