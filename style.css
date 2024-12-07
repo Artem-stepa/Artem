@@ -53,5 +53,11 @@ border: 1px solid black;
 }
 td{
     border: 1px solid black;
-
+    width: 30px;
+    height: 30px;
+    background-size:contain;
+    font-size: 23px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+

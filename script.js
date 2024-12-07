@@ -29,8 +29,21 @@ console.log(hours)
 
 for(let i = 0; i < days.length; i++){
     for(let j = 1; j < hours[i].length; j++){
-        hours[i][j].innerHTML = schedule[i][j]
-    
+        if(schedule[i][j] === undefined) {
+          hours[i][j].innerHTML = "-"
+        } else if(schedule[i][j] === "-"){
+          hours[i][j].style.backgroundImage = "url(https://www.dtek-oem.com.ua/media/page/no-electricity.png)"
+          hours[i][j].style.backgroundColor = " rgba(204, 206, 207, .33)"
+        } 
+        if(schedule[i][j] === "+") {
+          hours[i][j].style.background = "yellow"
+        }
+        if(schedule[i][j] === "+-") {
+          hours[i][j].style.backgroundImage = "url(https://www.dtek-oem.com.ua/media/page/maybe-electricity.png)"
+        }
+        if(schedule[i][j] === "0") {
+          hours[i][j].innerHTML = "-"
+        }
     }
 
 }
