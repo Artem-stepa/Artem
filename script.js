@@ -99,6 +99,6 @@ button.addEventListener("click",() => {
   let electricityValue = electricityValues[electricity.value]
   onAdd(dayNumber,hourNumber,electricityValue);
   printSchedule();
-  console.log(dayNumber,hourNumber +3,electricityValue,schedule);
+  console.log(dayNumber,hourNumber,electricityValue,schedule);
   // onAdd()
 })
