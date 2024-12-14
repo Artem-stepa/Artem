@@ -9,14 +9,16 @@ document.cookie =
   console.log (cookies)
 // розділяємо кукі по ; отримуємо дні,
 // потім кожен день ділимо по ,
-let scheduleCookies = document.cookie.split(";")
+let scheduleCookies = ""
 console.log (cookies)
 for(let i = 0;i < cookies.length;i++){
   if(cookies[i].split("=")[0] == "schedule"){
+    console.log(cookies[i].split("=")[1])
     scheduleCookies = cookies[i].split("=")[1]
     break
   }
 }
+
 const schedule = scheduleCookies
   .split("[")
   .map((day) => day.split(",").filter((day) => day != ""))
