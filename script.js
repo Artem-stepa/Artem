@@ -4,13 +4,21 @@
 // +- це може бути,
 // 0 це не встановлено
 document.cookie =
-  "+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;";
+  "schedule=+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[+,-,+-,0,+,-,+-,0,+,-,+-,0[;max-age=1000000000";
   let cookies = document.cookie.split(";")
   console.log (cookies)
 // розділяємо кукі по ; отримуємо дні,
 // потім кожен день ділимо по ,
-const schedule = document.cookie
-  .split(";")
+let scheduleCookies = document.cookie.split(";")
+console.log (cookies)
+for(let i = 0;i < cookies.length;i++){
+  if(cookies[i].split("=")[0] == "schedule"){
+    scheduleCookies = cookies[i].split("=")[1]
+    break
+  }
+}
+const schedule = scheduleCookies
+  .split("[")
   .map((day) => day.split(",").filter((day) => day != ""))
   .filter((day) => day.length != 0);
 
@@ -62,7 +70,7 @@ function saveToCookie(){
     for(let j=0;j<schedule.length;j++){
       scheduleCookies += (schedule[i][j] || "0") + ","
     }
-    scheduleCookies += ";"
+    scheduleCookies += "["
   }
   document.cookie = `schedule=${scheduleCookies};max-age=1000000000`;
   console.log("asdfsa",scheduleCookies)
