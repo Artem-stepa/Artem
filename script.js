@@ -3,12 +3,13 @@
 // - це нема,
 // +- це може бути,
 // 0 це не встановлено
-document.cookies =
+document.cookie =
   "+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;+,-,+-,0,+,-,+-,0,+,-,+-,0;";
-
+  let cookies = document.cookie.split(";")
+  console.log (cookies)
 // розділяємо кукі по ; отримуємо дні,
 // потім кожен день ділимо по ,
-const schedule = document.cookies
+const schedule = document.cookie
   .split(";")
   .map((day) => day.split(",").filter((day) => day != ""))
   .filter((day) => day.length != 0);
@@ -22,7 +23,6 @@ let hours = []
 
 for(let i = 0; i < days.length; i++){
     hours.push(days[i].querySelectorAll("td"))
-
 }
 
 console.log(hours)
@@ -56,8 +56,20 @@ let hour = document.querySelector(".select-hour");
 let electricity = document.querySelector(".select-electricity");
 let button = document.querySelector("button")
 
+function saveToCookie(){
+  let scheduleCookies = ""
+  for(let i=0; i<schedule.length;i++){
+    for(let j=0;j<schedule.length;j++){
+      scheduleCookies += (schedule[i][j] || "0") + ","
+    }
+    scheduleCookies += ";"
+  }
+  document.cookie = `schedule=${scheduleCookies};max-age=1000000000`;
+  console.log("asdfsa",scheduleCookies)
+}
 function onAdd(dayNumber, hour, value) {
   schedule[dayNumber][hour] = value;
+  saveToCookie()
 }
 
 let dayNameToNumber = {
@@ -72,8 +84,8 @@ let electricityValues = {
   "Невідомо":"0",
 }
 button.addEventListener("click",() => {
-  let dayNumber = dayNameToNumber[day.value];
-  let hourNumber = +hour.value.split(":")[0]
+  let dayNumber = dayNameToNumber[day.value]
+  let hourNumber = +hour.value.split(":")[0] + 1
   let electricityValue = electricityValues[electricity.value]
   onAdd(dayNumber,hourNumber,electricityValue);
   printSchedule();

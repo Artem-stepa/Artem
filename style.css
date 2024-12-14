@@ -6,6 +6,7 @@ body{
     gap:50px;
     width: 100%;
     align-items: center;
+    background-color: #e8cb10;
 }
 main{
     display: flex;
@@ -61,3 +62,15 @@ td{
     background-repeat: no-repeat;
 }
 
+.save{
+border-radius: 10px;
+}
+.select-day{
+    border-radius:10px;
+}
+.select-hour{
+    border-radius:10px;
+}
+.select-electricity{
+    border-radius:10px;
+}
