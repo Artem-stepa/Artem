@@ -28,6 +28,7 @@ function convertCookie(){
   let schedule = [];
   const scheduleCookie = getCookie("schedule")
   if(!scheduleCookie){
+    console.log("sf",schedule)
     for(let i = 0;i < 7;i++){
       schedule.push([]);
       for(let j = 0;j < 24;j++){
@@ -35,7 +36,6 @@ function convertCookie(){
       }
       schedule[i].push("[")
     }
-    printSchedule();
     return schedule;
   }
   schedule = getCookie("schedule")
@@ -45,22 +45,24 @@ function convertCookie(){
 
   return schedule;
 }
+const scheduleCookie = getCookie("schedule")
+
+let days = document.querySelectorAll(".day-row")
+let hours = []
+let select = document.querySelector(".select-day")
 
 const schedule = convertCookie();
 console.log("schedu",schedule)
 
-console.log("schedule", schedule);
-let select = document.querySelector(".select-day")
+console.log("da", schedule);
 
-let days = document.querySelectorAll(".day-row")
 console.log(days)
-let hours = []
 
 for(let i = 0; i < days.length; i++){
     hours.push(days[i].querySelectorAll("td"))
 }
 
-console.log(hours)
+console.log("f",hours)
 function printSchedule(){
   for(let i = 0; i < days.length; i++){
     for(let j = 1; j < hours[i].length; j++){
@@ -100,7 +102,7 @@ function saveToCookie(){
   let scheduleCookies = ""
   for(let i=0; i<schedule.length;i++){
     for(let j=0;j<schedule.length;j++){
-      scheduleCookies += (schedule[i][j] || "0") + ","
+      scheduleCookies += (schedule[i][j] || "0,")
     }
     scheduleCookies += "["
   }
