@@ -102,7 +102,7 @@ function saveToCookie(){
   let scheduleCookies = ""
   for(let i=0; i<schedule.length;i++){
     for(let j=0;j<schedule.length;j++){
-      scheduleCookies += (schedule[i][j] || "0,")
+      scheduleCookies += (schedule[i][j]+"," || "0,")
     }
     scheduleCookies += "["
   }
@@ -118,7 +118,7 @@ let dayNameToNumber = {
   "Вівторок":1,
   "Середа":2,
   "Четвер":3,
-  "П`ятниця":4,
+  "П'ятниця":4,
   "Субота":5,
   "Неділя":6,
 }
@@ -133,8 +133,9 @@ button.addEventListener("click",() => {
   let dayNumber = dayNameToNumber[day.value]
   let hourNumber = +hour.value.split(":")[0] + 1
   let electricityValue = electricityValues[electricity.value]
+  console.log(dayNumber,hourNumber,electricityValue,schedule);
+
   onAdd(dayNumber,hourNumber,electricityValue);
   printSchedule();
-  console.log(dayNumber,hourNumber,electricityValue,schedule);
   // onAdd()
 })
