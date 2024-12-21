@@ -85,7 +85,8 @@ function printSchedule(){
           hours[i][j].style.backgroundImage = "url(https://www.dtek-oem.com.ua/media/page/maybe-electricity.png)"
         }
         if(schedule[i][j] === "0") {
-          hours[i][j].innerHTML = ""
+          hours[i][j].style.backgroundImage = "none"
+          hours[i][j].style.backgroundColor = "transparent"
           hours[i][j].innerHTML = "-"
         }
     }

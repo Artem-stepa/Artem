@@ -4,9 +4,8 @@ body{
     align-items: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     gap:50px;
-    width: 100%;
     align-items: center;
-    background-color: #e8cb10;
+    background-color: #42f566;
 }
 main{
     display: flex;
@@ -25,6 +24,8 @@ h1{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    align-items: center;
+
     justify-content: space-between;
 }
 select{
@@ -45,12 +46,14 @@ h2{
 p{
 }
 table{
-border: 1px solid black;
-border-radius: 20px;
 border-collapse: collapse;
+background-color: #32B077;
 }
 tr{
 border: 1px solid black;
+}
+tr:first-child{
+    border-radius: 20px 20px 0 0;
 }
 td{
     border: 1px solid black;
@@ -60,6 +63,8 @@ td{
     font-size: 23px;
     background-position: center;
     background-repeat: no-repeat;
+    color:white;
+    padding: 3px;
  
 }
 
@@ -74,4 +79,23 @@ border-radius: 10px;
 }
 .select-electricity{
     border-radius:10px;
+}
+.select-day{
+    color:white;
+    background-color:#39C39D;
+}
+.select-hour{
+    color:white;
+    background-color:#39C39D;
+}
+.select-electricity{
+    color:white;
+    background-color:#39C39D;
+}
+.save{
+    color:white;
+    border:none;
+    background:transparent;
+    padding: 0;
+    font-size: 40px;
 }
